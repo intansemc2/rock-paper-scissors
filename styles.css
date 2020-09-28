@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: quicksand, sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: #24272e;
+}
+
+header {
+    background-color: #eee;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #25272e;
+    text-align: center;
+    font-weight: bold;
+}
+
+.score-board {
+    margin: 20px auto;
+    padding: 12px 20px;
+
+    border: 1px solid #fff;
+    border-radius: 4px;
+    
+    width: 200px;
+    height: 100px;
+
+    color: #fff;
+
+    text-align: center;
+    font-size: 40px;
+    font-weight: lighter;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge {
+    background-color: #e25840;
+    color: #fff;
+
+    font-size: 14px;    
+    font-weight: normal;
+
+    height: 50px;
+    width: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-label {
+    position: absolute;
+    top: 25px;
+    left: -35px;
+}
+
+#computer-label {
+    position: absolute;
+    top: 25px;
+    right: -35px;
+}
+
+.result {
+    font-size: 40px;
+    color: #fff;
+
+}
+
+.result > p {
+    text-align: center;
+    font-weight: lighter;
+}
+
+.choices {
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.choice {
+    display: inline-block;
+
+    color: #fff;
+
+    border: 1px solid #fff;
+    border-radius: 100px;
+
+    padding: 20px;
+    margin: 0 20px;
+
+    width: 100px;
+    height: 100px;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s;
+}
+
+.choice:hover {
+    cursor: pointer;
+
+    opacity: 0.5;
+}
+
+#action-message {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+
+    margin-top: 20px;
+}
