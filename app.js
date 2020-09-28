@@ -1,5 +1,5 @@
 //Constance
-const CHOICES = ['rock', 'paper', 'scissors'];
+const CHOICES = ['Rock', 'Paper', 'Scissors'];
 
 //Variables
 let userScore = 0;
@@ -28,17 +28,17 @@ function updateScoreBoard() {
 function userWin(userChoiceIndex, compChoiceIndex) {
     userScore += 1;
     updateScoreBoard();
-    result_div.innerHTML = `user${CHOICES[userChoiceIndex].fontsize(5).sub()} beat comp${CHOICES[compChoiceIndex].fontsize(5).sub()}`;
+    result_div.innerHTML = `${CHOICES[userChoiceIndex]}<sub><font size='5'>user</font></sub> beats ${CHOICES[compChoiceIndex].toLowerCase()}<sub><font size='5'>comp</font></sub>.You win!`;
 }
 
 function userLose(userChoiceIndex, compChoiceIndex) {
     compScore += 1;
     updateScoreBoard();
-    result_div.innerHTML = `user${CHOICES[userChoiceIndex].fontsize(5).sub()} lose comp${CHOICES[compChoiceIndex].fontsize(5).sub()}`;
+    result_div.innerHTML = `${CHOICES[userChoiceIndex]}<sub><font size='5'>user</font></sub> loses to ${CHOICES[compChoiceIndex].toLowerCase()}<sub><font size='5'>user</font></sub>. You lose!`;
 }
 
 function draw(userChoiceIndex, compChoiceIndex) {
-    result_div.innerHTML = `user${CHOICES[userChoiceIndex].fontsize(5).sub()} draw comp${CHOICES[compChoiceIndex].fontsize(5).sub()}`;
+    result_div.innerHTML = `${CHOICES[userChoiceIndex]}<sub><font size='5'>user</font></sub> equals ${CHOICES[compChoiceIndex].toLowerCase()}<sub><font size='5'>comp</font></sub>. It's a draw!`;
 }
 
 function game(userChoiceIndex) {
