@@ -25,24 +25,20 @@ function updateScoreBoard() {
     compScore_span.innerHTML = compScore;
 }
 
-function updateResult(userChoiceIndex, compChoiceIndex, result) {
-    result_div.innerHTML = `user<sub>${CHOICES[userChoiceIndex]}</sub> ${result} comp<sub>${CHOICES[compChoiceIndex]}</sub>`;
-}
-
 function userWin(userChoiceIndex, compChoiceIndex) {
     userScore += 1;
     updateScoreBoard();
-    updateResult(userChoiceIndex, compChoiceIndex, 'beat');
+    result_div.innerHTML = `user${CHOICES[userChoiceIndex].fontsize(5).sub()} beat comp${CHOICES[compChoiceIndex].fontsize(5).sub()}`;
 }
 
 function userLose(userChoiceIndex, compChoiceIndex) {
     compScore += 1;
     updateScoreBoard();
-    updateResult(userChoiceIndex, compChoiceIndex, 'lose');
+    result_div.innerHTML = `user${CHOICES[userChoiceIndex].fontsize(5).sub()} lose comp${CHOICES[compChoiceIndex].fontsize(5).sub()}`;
 }
 
 function draw(userChoiceIndex, compChoiceIndex) {
-    updateResult(userChoiceIndex, compChoiceIndex, 'draw');
+    result_div.innerHTML = `user${CHOICES[userChoiceIndex].fontsize(5).sub()} draw comp${CHOICES[compChoiceIndex].fontsize(5).sub()}`;
 }
 
 function game(userChoiceIndex) {
@@ -64,6 +60,14 @@ function game(userChoiceIndex) {
     }
 }
 
+function reset() {
+    userScore = 0;
+    compScore = 0;
+
+    updateScoreBoard();
+    result_div.innerHTML = 'Paper covers rock. You win!';
+}
+
 //Add event listeners
 rock_div.addEventListener('click', function () {
     game(0);
@@ -75,4 +79,8 @@ paper_div.addEventListener('click', function () {
 
 scissors_div.addEventListener('click', function () {
     game(2);
+});
+
+scoreBoard_div.addEventListener('click', function(){
+    reset();
 });
